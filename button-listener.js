@@ -1,4 +1,6 @@
 var BlendMicro = require('blendmicro');
+var notifier = require('node-notifier');
+var path = require('path');
 
 var bm = new BlendMicro("Adafruit Bluefruit LE");
 
@@ -7,9 +9,19 @@ bm.on('open', function(){
 
   // read data
   bm.on("data", function(data){
-    console.log(data.toString());
-    bm.updateRssi(function(err, rssi){
-      console.log("rssi:"+rssi);
+    console.log("The button was pressed!");
+    notifier.notify({
+      'title': 'Deploy Button',
+      'message': 'The button was pressed!',
+      'icon': path.join(__dirname, 'button.jpg'),
+      'wait': true
+    });
+    notifier.on('click', function (notifierObject, options) {
+      bm.write("2");
+    });
+
+    notifier.on('timeout', function (notifierObject, options) {
+      bm.write("3");
     });
   });
 
