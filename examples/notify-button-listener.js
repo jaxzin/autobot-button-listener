@@ -36,5 +36,4 @@ process.stdin.on("readable", function(){
   if(chunk == null) return;
   chunk = chunk.toString().replace(/[\r\n]/g, '');
     autobot.sendStatus(autobot.Status.get(chunk));
-  //bm.write(chunk);
 });
