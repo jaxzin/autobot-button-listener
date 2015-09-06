@@ -1,0 +1,28 @@
+{
+  "name": "autobot-button",
+  "private": false,
+  "version": "0.0.1",
+  "description": "Interact with the autobot-button",
+  "main": "lib/autobot-button.js",
+
+
+  "author": "Brian R. Jackson <brian@jaxzin.com>",
+  "license": "Apache License 2.0",
+  "dependencies": {
+    "blendmicro": "*",
+    "node-notifier": "*",
+    "eventemitter2": "*",
+    "debug": "*",
+    "lodash": "*",
+    "noble": "*",
+    "enum": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaxzin/autobot-button-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaxzin/autobot-button-node/issues"
+  },
+  "homepage": "https://github.com/jaxzin/autobot-button-node"
+}
